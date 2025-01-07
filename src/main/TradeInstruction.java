@@ -9,7 +9,7 @@ import static main.TradeReportUtility.dateFormatter;
 /**
  * Class that holds trade Instruction
  */
-public final class TradeInstruction {
+final class TradeInstruction {
 
     private final String entityName;
     private final InstructionType instructionType;
@@ -30,7 +30,7 @@ public final class TradeInstruction {
      * @param numberOfUnits            number of units to buy or sell
      * @param pricePerUnit             price of a unit
      */
-    public TradeInstruction(final String entityName, final String instructionType, final double agreedFx,
+  TradeInstruction(final String entityName, final String instructionType, final double agreedFx,
                             final String currency, final String instructionDate,
                             final String instructedSettlementDate,
                             final int numberOfUnits, final double pricePerUnit) {
