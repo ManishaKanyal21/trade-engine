@@ -25,7 +25,7 @@ final class TradeReportUtility {
      * @param instructionType
      * @return
      */
-    static Map<LocalDate, Double> getUSDSettlements(final List<TradeInstruction> tradeInstructions, final InstructionType instructionType) {
+    static Map<LocalDate, Double> calculateUSDSettlements(final List<TradeInstruction> tradeInstructions, final InstructionType instructionType) {
         Objects.requireNonNull(tradeInstructions, "Trade instructions should not be null.");
         return tradeInstructions.stream()
                 .filter(trade -> instructionType.equals(trade.getInstructionType()))
@@ -39,7 +39,7 @@ final class TradeReportUtility {
      * @param instructionType
      * @return
      */
-    static List<Map.Entry<String, Double>> getRankings(final List<TradeInstruction> tradeInstructions, final InstructionType instructionType) {
+    static List<Map.Entry<String, Double>> calculateRankings(final List<TradeInstruction> tradeInstructions, final InstructionType instructionType) {
         Objects.requireNonNull(tradeInstructions, "Trade instructions should not be null.");
         return tradeInstructions.stream()
                 .filter(trade -> instructionType.equals(trade.getInstructionType()))

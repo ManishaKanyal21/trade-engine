@@ -15,13 +15,13 @@ public class TradeReport {
 
         final List<TradeInstruction> tradeDetails = TradeReportUtility.getTradeInstructions();
 
-        final Map<LocalDate, Double> outgoingSettlements = TradeReportUtility.getUSDSettlements(tradeDetails, InstructionType.BUY);
+        final Map<LocalDate, Double> outgoingSettlements = TradeReportUtility.calculateUSDSettlements(tradeDetails, InstructionType.BUY);
 
-        final Map<LocalDate, Double> incomingSettlements = TradeReportUtility.getUSDSettlements(tradeDetails, InstructionType.SELL);
+        final Map<LocalDate, Double> incomingSettlements = TradeReportUtility.calculateUSDSettlements(tradeDetails, InstructionType.SELL);
 
-        final List<Map.Entry<String, Double>> outgoingRankings = TradeReportUtility.getRankings(tradeDetails, InstructionType.BUY);
+        final List<Map.Entry<String, Double>> outgoingRankings = TradeReportUtility.calculateRankings(tradeDetails, InstructionType.BUY);
 
-        final List<Map.Entry<String, Double>> incomingRankings = TradeReportUtility.getRankings(tradeDetails, InstructionType.SELL);
+        final List<Map.Entry<String, Double>> incomingRankings = TradeReportUtility.calculateRankings(tradeDetails, InstructionType.SELL);
 
         System.out.println("### Outgoing USD Settlements for dates ###");
         for (Map.Entry<LocalDate, Double> entry : outgoingSettlements.entrySet()) {
